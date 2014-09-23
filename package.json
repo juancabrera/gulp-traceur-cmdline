@@ -1,0 +1,37 @@
+{
+  "name": "gulp-traceur-cmdline",
+  "version": "0.0.1",
+  "description": "Traceur command line plugin for Gulp",
+  "main": "index.js",
+  "dependencies": {
+    "map-stream": "~0.1.0",
+    "through2": "~1.0.0",
+    "gulp-util": "~3.0.0"
+  },
+  "devDependencies": {
+    "jshint": "~2.5.4",
+    "mocha": "~1.21.4",
+    "should": "~4.0.4",
+    "gulp-mocha": "~1.0.0",
+    "gulp": "~3.8.7"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec && jshint ./*.js && jshint ./test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juancabrera/gulp-traceur-cmdline"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulp-traceur-cmdline"
+  ],
+  "author": "Juan Cabrera <juan.acc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juancabrera/gulp-traceur-cmdline/issues"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
