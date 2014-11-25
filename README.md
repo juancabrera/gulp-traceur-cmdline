@@ -1,21 +1,24 @@
 Gulp Traceur Command Line
 ==========================
 
-Usage
+Overview
 --------
-Install traceur globaly
+Gulp plugin that wraps command line [Traceur](https://github.com/google/traceur-compiler) instead of using its Node API. 
+This is basically an alternative to [gulp-traceur](https://www.npmjs.org/package/gulp-traceur) (that uses Traceur's Node API). The main reason for this plugin is that sometimes the output of Traceur's Node API is different than the command line Traceur, especifically the option of inline modules, which it's pretty important if you want to use ES6 modules in the Browser.
+
+Install
+-------
+Make sure you have installed Traceur globally:
 ```
 npm install traceur --global
 ```
-
-Add the package to your package.json
-```javascript
-"devDependencies": {
-  "gulp-traceur-cmdline": "git+ssh://git@github.com:juancabrera/gulp-traceur-cmdline.git#v0.0.1"
-}
+Install the gulp-traceur-cmdline:
 ```
+npm install gulp-traceur-cmdline --save-dev
+```
+Usage
+-------
 
-Add it to your gulpfile.js
 ```javascript
 var gulpTraceurCmdline = require('gulp-traceur-cmdline');
 
@@ -24,6 +27,7 @@ gulp.task('gulpTraceurCmdline',function() {
     .pipe(gulpTraceurCmdline('/usr/local/bin/traceur', {
       modules : 'inline',
       out     : './dist/styleguide/js/main.js',
+      source  : './source/styleguide/js/main.js',
       debug   : true
     }))
 });
