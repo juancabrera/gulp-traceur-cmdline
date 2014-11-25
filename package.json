@@ -1,6 +1,6 @@
 {
   "name": "gulp-traceur-cmdline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Traceur command line plugin for Gulp",
   "main": "index.js",
   "dependencies": {

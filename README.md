@@ -4,7 +4,7 @@ Gulp Traceur Command Line
 Overview
 --------
 Gulp plugin that wraps command line [Traceur](https://github.com/google/traceur-compiler) instead of using its Node API. 
-This is basically an alternative to [gulp-traceur](https://www.npmjs.org/package/gulp-traceur) (that uses Traceur's Node API). The main reason for this plugin is that sometimes the output of Traceur's Node API is different than the command line Traceur, especifically the option of inline modules, which it's pretty important if you want to use ES6 modules in the Browser.
+This is basically an alternative to [gulp-traceur](https://www.npmjs.org/package/gulp-traceur) (that uses Traceur's Node API). The main reason for this plugin is that sometimes the output of Traceur's Node API is different than the command line Traceur, especifically the option of inline modules, which it's pretty important if you want to use ES6 modules (not AMD or Browserify) in the Browser.
 
 Install
 -------
