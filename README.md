@@ -27,8 +27,7 @@ gulp.task('gulpTraceurCmdline',function() {
     .pipe(gulpTraceurCmdline('/usr/local/bin/traceur', {
       modules : 'inline',
       out     : './dist/styleguide/js/main.js',
-      source  : './source/styleguide/js/main.js',
-      debug   : true
+      debug   : false
     }))
 });
 ```
