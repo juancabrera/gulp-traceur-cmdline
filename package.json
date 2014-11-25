@@ -1,6 +1,6 @@
 {
   "name": "gulp-traceur-cmdline",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Traceur command line plugin for Gulp",
   "main": "index.js",
   "dependencies": {
@@ -24,7 +24,15 @@
   },
   "keywords": [
     "gulpplugin",
-    "gulp-traceur-cmdline"
+    "gulp-traceur-cmdline", 
+    "traceur", 
+    "javascript",
+    "es5",
+    "es6",
+    "ES.next",
+    "harmony",
+    "compiler",
+    "transpiler"
   ],
   "author": "Juan Cabrera <juan.acc@gmail.com>",
   "license": "MIT",
