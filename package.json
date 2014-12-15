@@ -9,11 +9,9 @@
     "gulp-util": "~3.0.0"
   },
   "devDependencies": {
-    "jshint": "~2.5.4",
-    "mocha": "~1.21.4",
-    "should": "~4.0.4",
-    "gulp-mocha": "~1.0.0",
-    "gulp": "~3.8.7"
+    "chai": "^1.10.0",
+    "gulp": "^3.8.10",
+    "gulp-mocha": "^2.0.0"
   },
   "scripts": {
     "test": "mocha --reporter spec && jshint ./*.js && jshint ./test/*.js"
@@ -24,8 +22,8 @@
   },
   "keywords": [
     "gulpplugin",
-    "gulp-traceur-cmdline", 
-    "traceur", 
+    "gulp-traceur-cmdline",
+    "traceur",
     "javascript",
     "es5",
     "es6",
