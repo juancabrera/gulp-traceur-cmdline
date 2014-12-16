@@ -6,7 +6,8 @@
   "dependencies": {
     "map-stream": "~0.1.0",
     "through2": "~1.0.0",
-    "gulp-util": "~3.0.0"
+    "gulp-util": "~3.0.0", 
+    "traceur": "~0.0.79"
   },
   "devDependencies": {
     "chai": "^1.10.0",
