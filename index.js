@@ -8,34 +8,27 @@ var map   = require('map-stream'),
     fs      = require('fs'),
     build_commandline = require('./lib/traceur_command_builder');
 
-module.exports = function(traceurcmd, opt) {
+module.exports = function(opt) {
 
     // Assign default options if one is not supplied
     opt = opt || {};
     var debug =   opt.debug   || false;
-    delete opt.debug;
     var clear = opt.clear;
+    delete opt.debug;
     delete opt.clear;
-
-
 
     return map( function(file, cb) {
         var module_opts = {
             clear: clear,
             file: file,
-            traceurcmd: traceurcmd
+            traceurcmd: "./node_modules/gulp-traceur-cmdline/node_modules/traceur/traceur"
         };
 
         var cmd = build_commandline(opt, module_opts);
 
-
-
-
-
-
         // print out debug details
         if (debug) {
-            gutil.log(gutil.colors.yellow('\n       *** Debug : Command - ' + cmd  + ' ***\n'));
+            gutil.log(gutil.colors.yellow('\n *** Debug : Command - ' + cmd  + ' ***\n'));
         }
 
         exec(cmd, function(error, stdout, stderr) {
