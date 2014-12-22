@@ -1,6 +1,5 @@
 # Gulp Traceur (Command Line)
 
-## Overview
 Gulp plugin for [Traceur](https://github.com/google/traceur-compiler). This plugin uses Traceur's command line instead of its Node API.  
 
 **Why Traceur's command line ?**  
