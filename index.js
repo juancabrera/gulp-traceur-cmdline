@@ -21,7 +21,7 @@ module.exports = function(opt) {
         var module_opts = {
             clear: clear,
             file: file,
-            traceurcmd: "./node_modules/gulp-traceur-cmdline/node_modules/traceur/traceur"
+            traceurcmd: __dirname + "/node_modules/traceur/traceur"
         };
 
         var cmd = build_commandline(opt, module_opts);
