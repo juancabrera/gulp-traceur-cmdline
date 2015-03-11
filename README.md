@@ -29,3 +29,6 @@ gulp.task('gulpTraceurCmdline',function() {
 ## API
 #### Options
 You can pass all current [Traceur's options](https://github.com/google/traceur-compiler/wiki/Options-for-Compiling) through gulp-traceur-cmdline. The default for the option `modules` is `inline`.
+
+## License
+MIT Copyright (c) [Juan Cabrera](http://juan.me)
