@@ -4,7 +4,7 @@
   "description": "Traceur command line plugin for Gulp",
   "main": "index.js",
   "dependencies": {
-    "map-stream": "~0.1.0",
+    "map-stream": "~0.0.5",
     "through2": "~1.0.0",
     "gulp-util": "~3.0.4", 
     "traceur": "~0.0.84"
