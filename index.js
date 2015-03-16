@@ -1,6 +1,7 @@
 'use strict';
 
 var map = require('map-stream'),
+    through = require('through2'), 
     gutil = require('gulp-util'),
     exec = require('child_process').exec,
     fs = require('fs'),
@@ -13,25 +14,38 @@ module.exports = function(opt) {
   delete opt.debug;
   delete opt.clear;
 
-  return map( function(file, cb) {
+  return through.obj(function(file, enc, cb) {
+    var _self = this;
+    if (file.isNull()) {
+      cb(null, file);
+      return;
+    }
+
+    if (file.isStream()) {
+      cb(new gutil.PluginError('gulp-traceur-cmdline', 'Streaming not supported'));
+      return;
+    }
+
     var module_opts = {
       clear: clear,
       file: file,
       traceurcmd: __dirname + "/node_modules/traceur/traceur"
     };
-
     var cmd = build_commandline(opt, module_opts);
 
-    if (debug)  gutil.log(gutil.colors.yellow('\n *** Debug : Command - ' + cmd  + ' ***\n'));
-
     exec(cmd, function(error, stdout, stderr) {
+      console.log("(", stdout, ")");
       if (error) {
-        if (debug) {
-          gutil.log(error);
-        }
+        _self.emit('error', new gutil.PluginError('gulp-traceur-cmdline', errs.join('\n'), {
+          fileName: file.path,
+          showStack: false
+        }));
         cb(error, file);
       } else {
-        cb(null, file);
+        console.log("file", file);
+        file.contents = new Buffer(stdout);
+        _self.push(file);
+       cb();
       }
     });
   });
