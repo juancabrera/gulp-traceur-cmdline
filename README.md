@@ -18,12 +18,11 @@ npm install gulp-traceur-cmdline --save-dev
 var gulpTraceurCmdline = require('gulp-traceur-cmdline');
 
 gulp.task('gulpTraceurCmdline',function() {
-  gulp.src("./source/styleguide/js/main.js")
+  gulp.src("./source/js/main.js")
     .pipe(gulpTraceurCmdline({
-      modules : 'inline',
-      out     : './dist/styleguide/js/main.js',
-      debug   : false
+      modules : 'inline'
     }))
+    .pipe(gulp.dest('./dist/js/'));
 });
 ```
 ## API
