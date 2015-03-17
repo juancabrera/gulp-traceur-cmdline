@@ -34,7 +34,6 @@ module.exports = function(opt) {
     var cmd = build_commandline(opt, module_opts);
 
     exec(cmd, function(error, stdout, stderr) {
-      console.log("(", stdout, ")");
       if (error) {
         _self.emit('error', new gutil.PluginError('gulp-traceur-cmdline', errs.join('\n'), {
           fileName: file.path,
@@ -42,7 +41,6 @@ module.exports = function(opt) {
         }));
         cb(error, file);
       } else {
-        console.log("file", file);
         file.contents = new Buffer(stdout);
         _self.push(file);
        cb();
