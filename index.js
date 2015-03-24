@@ -33,9 +33,9 @@ module.exports = function(opt) {
     };
     var cmd = build_commandline(opt, module_opts);
 
-    exec(cmd, function(error, stdout, stderr) {
+    exec("asdf" + cmd, function(error, stdout, stderr) {
       if (error) {
-        _self.emit('error', new gutil.PluginError('gulp-traceur-cmdline', errs.join('\n'), {
+        _self.emit('error', new gutil.PluginError('gulp-traceur-cmdline', stderr, {
           fileName: file.path,
           showStack: false
         }));
