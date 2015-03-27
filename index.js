@@ -1,10 +1,11 @@
 'use strict';
 
 var map = require('map-stream'),
-    through = require('through2'), 
+    through = require('through2'),
     gutil = require('gulp-util'),
     exec = require('child_process').exec,
     fs = require('fs'),
+    path = require('path'),
     build_commandline = require('./lib/traceur_command_builder');
 
 module.exports = function(opt) {
@@ -29,11 +30,11 @@ module.exports = function(opt) {
     var module_opts = {
       clear: clear,
       file: file,
-      traceurcmd: __dirname + "/node_modules/traceur/traceur"
+      traceurcmd: path.join(__dirname, "/node_modules/traceur/traceur")
     };
     var cmd = build_commandline(opt, module_opts);
 
-    exec("asdf" + cmd, function(error, stdout, stderr) {
+    exec(cmd, function(error, stdout, stderr) {
       if (error) {
         _self.emit('error', new gutil.PluginError('gulp-traceur-cmdline', stderr, {
           fileName: file.path,
@@ -41,10 +42,9 @@ module.exports = function(opt) {
         }));
         cb(error, file);
       } else {
-        file.contents = new Buffer(stdout);
-        _self.push(file);
-       cb();
-      }
-    });
+          file.contents = new Buffer(stdout);
+          _self.push(file);
+          cb();
+      }});
   });
 };
