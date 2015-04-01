@@ -6,10 +6,11 @@
   "dependencies": {
     "map-stream": "~0.0.5",
     "through2": "~1.0.0",
-    "gulp-util": "~3.0.4", 
+    "gulp-util": "~3.0.4",
     "traceur": "~0.0.87"
   },
   "devDependencies": {
+    "btoa": "^1.1.2",
     "chai": "^2.1.1",
     "gulp": "^3.8.11",
     "gulp-mocha": "^2.0.0"
