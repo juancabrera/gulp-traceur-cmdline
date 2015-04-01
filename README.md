@@ -20,7 +20,8 @@ var gulpTraceurCmdline = require('gulp-traceur-cmdline');
 gulp.task('gulpTraceurCmdline',function() {
   gulp.src("./source/js/main.js")
     .pipe(gulpTraceurCmdline({
-      modules : 'inline'
+      modules : 'inline',
+      tempfile: 'uniqueTemfile.js'  // set unique tempfile for every task (if you run some tasks at the same time) 
     }))
     .pipe(gulp.dest('./dist/js/'));
 });
