@@ -1,16 +1,16 @@
 {
   "name": "gulp-traceur-cmdline",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "description": "Traceur command line plugin for Gulp",
   "main": "index.js",
   "dependencies": {
+    "btoa": "^1.1.2",
     "map-stream": "~0.0.5",
     "through2": "~1.0.0",
     "gulp-util": "~3.0.4",
     "traceur": "~0.0.87"
   },
   "devDependencies": {
-    "btoa": "^1.1.2",
     "chai": "^2.1.1",
     "gulp": "^3.8.11",
     "gulp-mocha": "^2.0.0"
