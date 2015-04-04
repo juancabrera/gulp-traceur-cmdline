@@ -8,10 +8,18 @@ var map = require('map-stream'),
     path = require('path'),
     build_commandline = require('./lib/traceur_command_builder');
 
+var getTraceurPath = function() {
+  var traceurPathInner = path.join(__dirname, "/node_modules/traceur/traceur");
+  var traceurPathOuter = path.join(__dirname, "../traceur/traceur");
+
+  return fs.existsSync(traceurPathInner) ? traceurPathInner : traceurPathOuter;
+};
+
 module.exports = function(opt) {
   opt = opt || {};
   var debug = opt.debug || false;
   var clear = opt.clear;
+  var traceurcmd = opt.traceurcmd || getTraceurPath();
   delete opt.debug;
   delete opt.clear;
 
@@ -30,7 +38,7 @@ module.exports = function(opt) {
     var module_opts = {
       clear: clear,
       file: file,
-      traceurcmd: path.join(__dirname, "/node_modules/traceur/traceur")
+      traceurcmd: traceurcmd
     };
     var cmd = build_commandline(opt, module_opts);
 
